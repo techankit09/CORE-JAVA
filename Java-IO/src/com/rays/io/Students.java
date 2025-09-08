@@ -7,37 +7,30 @@ import java.io.FileWriter;
 
 public class Students {
 
-    public static void main(String[] args) throws Exception {
-           
-            BufferedReader file = new BufferedReader(new FileReader("D://IO//Boys.txt"));
-            BufferedReader file1 = new BufferedReader(new FileReader("D://IO//Girls.txt"));
+	public static void main(String[] args) throws Exception {
 
-            
-            BufferedWriter file2 = new BufferedWriter(new FileWriter("D://IO//Students.txt", true));
+		BufferedReader file = new BufferedReader(new FileReader("D://IO//Boys.txt"));
+		BufferedReader file1 = new BufferedReader(new FileReader("D://IO//Girls.txt"));
+		BufferedWriter file2 = new BufferedWriter(new FileWriter("D://IO//Students.txt", true));
 
-            String line;
+		String line = file.readLine();
 
-            
-            while ((line = file.readLine()) != null) {
-                file2.write(line);
-                file2.newLine();
-            }
+		while (line != null) {
+			file2.write(line);
+			file2.newLine();
+			line = file.readLine();
+		}
 
-            
-            while ((line = file1.readLine()) != null) {
-                file2.write(line);
-                file2.newLine();
-            }
+		while ((line = file1.readLine()) != null) {
+			file2.write(line);
+			file2.newLine();
+		}
 
-            System.out.println("Data merged Sucessfully");
+		System.out.println("Data merged Sucessfully");
 
-            file.close();
-            file1.close();
-            file2.close();
+		file.close();
+		file1.close();
+		file2.close();
 
-    }
+	}
 }
-    
-
-
-
