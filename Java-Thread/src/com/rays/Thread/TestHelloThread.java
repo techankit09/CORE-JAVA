@@ -10,7 +10,9 @@ public class TestHelloThread  {
     
     t1.start();
     t2.start();
-    t1.stop();
+  //  t1.stop();
+    t1.setPriority(10);
+    t2.setPriority(1);
 	}
 
 }
